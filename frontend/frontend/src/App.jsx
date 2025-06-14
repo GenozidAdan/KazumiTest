@@ -13,7 +13,7 @@ function App() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/users');
+      const response = await axios.get('https://kazumitest.onrender.com/api/users');
       setUsers(response.data);
     } catch (error) {
       console.error('Error fetching users:', error);
@@ -23,11 +23,12 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3001/api/users', { name, email });
+      await axios.post('https://kazumitest.onrender.com/api/users', { name, email });
       fetchUsers();
       setName('');
       setEmail('');
     } catch (error) {
+      
       console.error('Error creating user:', error);
     }
   };
